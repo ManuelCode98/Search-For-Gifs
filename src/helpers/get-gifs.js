@@ -4,7 +4,6 @@ const api_key = import.meta.env.VITE_API_KEY;
 const getGifs = async( category, limitValue )=>{
   
     if( limitValue === undefined ) return;
-    console.log('b',limitValue);
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}=${category}&limit=${limitValue}`
     const resp = await fetch( url );
     const { data } = await resp.json();

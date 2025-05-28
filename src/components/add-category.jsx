@@ -4,7 +4,7 @@ import { useState } from "react";
 const AddCategory = ( { onNewCategory, limitValue } ) => {
 
     const [ inputValue, setInputValue ] = useState('');
-    const [ inputValueLimit, setInputValueLimit ] = useState(10);
+    const [ inputValueLimit, setInputValueLimit ] = useState(1);
 
     const onInputChangeLimit = ( { target } )=>{
 
@@ -26,6 +26,7 @@ const AddCategory = ( { onNewCategory, limitValue } ) => {
         onNewCategory( removeSpaces, limit )
         setInputValue( '' );
         setInputValueLimit( limit );
+        localStorage.setItem( 'limit', limit );
         
     };
 
@@ -38,7 +39,7 @@ const AddCategory = ( { onNewCategory, limitValue } ) => {
             </div>
             <div className="container-limit">
                 <span>Limite</span>
-                <input className="inputs input-limit" type="number" value={ inputValueLimit } onChange={onInputChangeLimit} min={1} max={50}  placeholder="10" />
+                <input className="inputs input-limit" type="number" value={ inputValueLimit } defaultValue={inputValue} onChange={onInputChangeLimit} min={1} max={50}  placeholder="10" />
             </div>
             <button className="button-submit" type="submit">Buscar</button>
         </form>
