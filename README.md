@@ -1,8 +1,8 @@
 # Search For Gifs
 
 ### Primero debes de tener una cuenta en giphy.com para poder tener un api_key
-    [giphy.com]('https://developers.giphy.com/')
-
+    https://developers.giphy.com/
+    
 ### Luego le das en API Explorer 
     creas una api_key
 
